@@ -1,0 +1,25 @@
+main: dev.lucadev.Main
+version: 0.0.1
+api-version: 1.19
+name: LucaFoods
+author: LucaDev
+description: Meow
+
+commands:
+  uranium:
+    description: meow
+    usage: /<command>
+
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:1.8.0
+  - org.jetbrains.kotlin:kotlin-reflect:1.8.0
+  - org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.4
+  - org.graalvm.js:js:22.2.0
+  - org.graalvm.js:js-scriptengine:22.2.0
+  - org.graalvm.truffle:truffle-api:22.3.1
+  - org.tukaani:xz:1.9
+  - org.jetbrains.exposed:exposed-core:0.41.1
+  - org.jetbrains.exposed:exposed-jdbc:0.41.1
+load: STARTUP
