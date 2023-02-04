@@ -11,7 +11,7 @@ class EatListener : Listener {
     fun onItemConsume(event: PlayerItemConsumeEvent) {
         val item = event.item
         if (item.itemMeta!!.displayName == "Uranium") {
-            val effect = PotionEffect(PotionEffectType.WITHER, 20 * 15, 1) // 15 seconds of Wither, level 1
+            val effect = PotionEffect(PotionEffectType.WITHER, 20 * 25, 1) // 15 seconds of Wither, level 1
             event.player.addPotionEffect(effect)
         }
     }

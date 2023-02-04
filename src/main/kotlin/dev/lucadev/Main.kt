@@ -20,7 +20,7 @@ class Main: JavaPlugin(), Listener {
     }
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        if (sender is Player) {
+        if (sender is Player && sender.hasPermission("uranium.use")) {
             val item = ItemStack(Material.DRIED_KELP)
             val meta = item.itemMeta
             meta!!.setDisplayName("Uranium")
@@ -31,6 +31,8 @@ class Main: JavaPlugin(), Listener {
 
             val effect = PotionEffect(PotionEffectType.POISON, 20 * 15, 0.5.toInt())
             sender.addPotionEffect(effect)
+        } else {
+            sender.sendMessage("You either dont have perms to use this command or you're console")
         }
         return true
     }

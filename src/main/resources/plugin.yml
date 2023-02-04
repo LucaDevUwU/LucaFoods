@@ -9,6 +9,11 @@ commands:
   uranium:
     description: meow
     usage: /<command>
+    permission: uranium.usage
+
+permissions:
+  uranium.usage:
+    default: false
 
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:1.8.0
