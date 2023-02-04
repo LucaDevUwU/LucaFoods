@@ -10,6 +10,8 @@ import org.bukkit.event.Listener
 import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
 import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.potion.PotionEffect
+import org.bukkit.potion.PotionEffectType
 
 class Main: JavaPlugin(), Listener {
     override fun onEnable() {
@@ -26,6 +28,9 @@ class Main: JavaPlugin(), Listener {
             item.itemMeta = meta
             item.itemMeta!!.persistentDataContainer.set(NamespacedKey.minecraft("eaten"), PersistentDataType.INTEGER, 1)
             sender.inventory.addItem(item)
+
+            val effect = PotionEffect(PotionEffectType.POISON, 20 * 15, 0.5.toInt())
+            sender.addPotionEffect(effect)
         }
         return true
     }
